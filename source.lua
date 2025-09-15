@@ -73,7 +73,7 @@ end
 local requestsDisabled = true --getgenv and getgenv().DISABLE_RAYFIELD_REQUESTS
 local InterfaceBuild = '3K3W'
 local Release = "Build 1.68"
-local RayfieldFolder = "DSS"
+local RayfieldFolder = "Rayfield"
 local ConfigurationFolder = RayfieldFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
 local settingsTable = {
@@ -3995,5 +3995,7 @@ task.delay(4, function()
 		Main.Notice.Visible = false
 	end
 end)
+
+print("Rayfield Library | Loaded Successfully -- Modificado By DSS")
 
 return RayfieldLibrary
