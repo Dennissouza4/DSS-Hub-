@@ -1640,14 +1640,14 @@ function RayfieldLibrary:CreateWindow(Settings)
 			if typeof(Settings.Icon) == 'string' and Icons then
 				local asset = getIcon(Settings.Icon)
 
-				Topbar.Icon.Image = "rbxassetid://72609204745580"
+				Topbar.Icon.Image = 'rbxassetid://'..asset.id
 				Topbar.Icon.ImageRectOffset = asset.imageRectOffset
 				Topbar.Icon.ImageRectSize = asset.imageRectSize
 			else
 				Topbar.Icon.Image = getAssetUri(Settings.Icon)
 			end
 		else
-            Topbar.Icon.Image = getAssetUri(Settings.Icon)
+			Topbar.Icon.Image = "rbxassetid://" .. 0
 		end
 	end
 
