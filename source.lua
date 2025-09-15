@@ -654,7 +654,7 @@ local CoreGui = getService("CoreGui")
 
 -- Interface Management
 
-local Rayfield = useStudio and script.Parent:FindFirstChild('Rayfield') or game:GetObjects("rbxassetid://10804731440")[1]
+local Rayfield = useStudio and script.Parent:FindFirstChild('Rayfield') or game:GetObjects("rbxassetid://72609204745580")[1]
 local buildAttempts = 0
 local correctBuild = false
 local warned
@@ -675,7 +675,7 @@ repeat
 		warned = true
 	end
 
-	toDestroy, Rayfield = Rayfield, useStudio and script.Parent:FindFirstChild('Rayfield') or game:GetObjects("rbxassetid://10804731440")[1]
+	toDestroy, Rayfield = Rayfield, useStudio and script.Parent:FindFirstChild('Rayfield') or game:GetObjects("rbxassetid://72609204745580")[1]
 	if toDestroy and not useStudio then toDestroy:Destroy() end
 
 	buildAttempts = buildAttempts + 1
