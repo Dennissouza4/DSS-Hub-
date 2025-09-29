@@ -8,6 +8,7 @@
 	Max    | Programming
 	Damian | Programming
 
+	DS Software: Editing
 ]]
 
 if debugX then
@@ -78,7 +79,7 @@ local ConfigurationExtension = ".rfld"
 local settingsTable = {
 	General = {
 		-- if needs be in order just make getSetting(name)
-		rayfieldOpen = {Type = 'bind', Value = 'K', Name = 'Rayfield Keybind'},
+		rayfieldOpen = {Type = 'bind', Value = 'K', Name = 'DSSHub Keybind'},
 		-- buildwarnings
 		-- rayfieldprompts
 
@@ -144,7 +145,7 @@ local function loadSettings()
 			-- for debug in studio
 			if useStudio then
 				file = [[
-		{"General":{"rayfieldOpen":{"Value":"K","Type":"bind","Name":"Rayfield Keybind","Element":{"HoldToInteract":false,"Ext":true,"Name":"Rayfield Keybind","Set":null,"CallOnChange":true,"Callback":null,"CurrentKeybind":"K"}}},"System":{"usageAnalytics":{"Value":false,"Type":"toggle","Name":"Anonymised Analytics","Element":{"Ext":true,"Name":"Anonymised Analytics","Set":null,"CurrentValue":false,"Callback":null}}}}
+		{"General":{"rayfieldOpen":{"Value":"K","Type":"bind","Name":"DSSHub Keybind","Element":{"HoldToInteract":false,"Ext":true,"Name":"Rayfield Keybind","Set":null,"CallOnChange":true,"Callback":null,"CurrentKeybind":"K"}}},"System":{"usageAnalytics":{"Value":false,"Type":"toggle","Name":"Anonymised Analytics","Element":{"Ext":true,"Name":"Anonymised Analytics","Set":null,"CurrentValue":false,"Callback":null}}}}
 	]]
 			end
 
@@ -1564,16 +1565,36 @@ end
 
 
 function RayfieldLibrary:CreateWindow(Settings)
-	print('creating window')
+	print('DS SOFTWARE: Creating a Window.')
+
 	if Rayfield:FindFirstChild('Loading') then
 		if getgenv and not getgenv().rayfieldCached then
 			Rayfield.Enabled = true
-			Rayfield.Loading.Visible = true
+
+			-- Oculta o antigo Loading
+			Rayfield.Loading.Visible = false
+
+			-- Verifica se já existe o ImageLabel
+			local existingImage = Rayfield:FindFirstChild("RayfieldImageLabel")
+			if not existingImage then
+				existingImage = Instance.new("ImageLabel")
+				existingImage.Name = "RayfieldImageLabel"
+				existingImage.Parent = Rayfield
+				existingImage.Image = "rbxassetid://133774712356480"
+				existingImage.Size = UDim2.new(0, 100, 0, 100) -- Ajuste o tamanho conforme necessário
+				existingImage.Position = UDim2.new(0.5, -50, 0.5, -50) -- Centralizado (ajuste se quiser)
+				existingImage.BackgroundTransparency = 1
+			end
+
+			existingImage.Visible = true
 
 			task.wait(1.4)
-			Rayfield.Loading.Visible = false
+
+			existingImage.Visible = false
 		end
 	end
+
+
 
 	if getgenv then getgenv().rayfieldCached = true end
 
@@ -1673,20 +1694,6 @@ function RayfieldLibrary:CreateWindow(Settings)
 	Topbar.Visible = false
 	Elements.Visible = false
 	LoadingFrame.Visible = true
-
-	if not Settings.DisableRayfieldPrompts then
-		task.spawn(function()
-			while true do
-				task.wait(math.random(180, 600))
-				RayfieldLibrary:Notify({
-					Title = "Rayfield Interface",
-					Content = "Enjoying this UI library? Find it at sirius.menu/discord",
-					Duration = 7,
-					Image = 4370033185,
-				})
-			end
-		end)
-	end
 
 	pcall(function()
 		if not Settings.ConfigurationSaving.FileName then
@@ -1956,15 +1963,15 @@ function RayfieldLibrary:CreateWindow(Settings)
 	Notifications.Visible = true
 	Rayfield.Enabled = true
 
-	task.wait(0.5)
-	TweenService:Create(Main, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0}):Play()
-	TweenService:Create(Main.Shadow.Image, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {ImageTransparency = 0.6}):Play()
-	task.wait(0.1)
-	TweenService:Create(LoadingFrame.Title, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {TextTransparency = 0}):Play()
-	task.wait(0.05)
-	TweenService:Create(LoadingFrame.Subtitle, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {TextTransparency = 0}):Play()
-	task.wait(0.05)
-	TweenService:Create(LoadingFrame.Version, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {TextTransparency = 0}):Play()
+	--task.wait(0.5)
+	--TweenService:Create(Main, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0}):Play()
+	--TweenService:Create(Main.Shadow.Image, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {ImageTransparency = 0.6}):Play()
+	--task.wait(0.1)
+	--TweenService:Create(LoadingFrame.Title, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {TextTransparency = 0}):Play()
+	--task.wait(0.05)
+	--TweenService:Create(LoadingFrame.Subtitle, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {TextTransparency = 0}):Play()
+	--task.wait(0.05)
+	--TweenService:Create(LoadingFrame.Version, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {TextTransparency = 0}):Play()
 
 
 	Elements.Template.LayoutOrder = 100000
