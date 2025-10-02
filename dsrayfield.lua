@@ -602,6 +602,49 @@ local RayfieldLibrary = {
 			PlaceholderColor = Color3.fromRGB(150, 150, 160)
 		},
 
+		DssHub = {
+	TextColor = Color3.fromRGB(220, 220, 230),
+
+	Background = Color3.fromRGB(15, 18, 25),
+	Topbar = Color3.fromRGB(20, 23, 30),
+	Shadow = Color3.fromRGB(10, 12, 18),
+
+	NotificationBackground = Color3.fromRGB(18, 22, 30),
+	NotificationActionsBackground = Color3.fromRGB(30, 34, 42),
+
+	TabBackground = Color3.fromRGB(25, 28, 35),
+	TabStroke = Color3.fromRGB(35, 40, 50),
+	TabBackgroundSelected = Color3.fromRGB(40, 45, 60),
+	TabTextColor = Color3.fromRGB(180, 180, 190),
+	SelectedTabTextColor = Color3.fromRGB(230, 230, 240),
+
+	ElementBackground = Color3.fromRGB(22, 26, 32),
+	ElementBackgroundHover = Color3.fromRGB(28, 32, 40),
+	SecondaryElementBackground = Color3.fromRGB(26, 30, 38),
+	ElementStroke = Color3.fromRGB(35, 40, 50),
+	SecondaryElementStroke = Color3.fromRGB(30, 35, 45),
+
+	SliderBackground = Color3.fromRGB(40, 45, 60),
+	SliderProgress = Color3.fromRGB(80, 90, 120), -- Azul acinzentado
+	SliderStroke = Color3.fromRGB(100, 110, 140),
+
+	ToggleBackground = Color3.fromRGB(30, 35, 42),
+	ToggleEnabled = Color3.fromRGB(90, 100, 130), -- Azul petróleo elegante
+	ToggleDisabled = Color3.fromRGB(60, 60, 70),
+	ToggleEnabledStroke = Color3.fromRGB(120, 130, 160),
+	ToggleDisabledStroke = Color3.fromRGB(65, 65, 75),
+	ToggleEnabledOuterStroke = Color3.fromRGB(70, 80, 110), 
+	ToggleDisabledOuterStroke = Color3.fromRGB(50, 50, 60),
+
+	DropdownSelected = Color3.fromRGB(35, 40, 55), -- Fundo com leve tom roxo-azulado
+	DropdownUnselected = Color3.fromRGB(20, 24, 30),
+
+	InputBackground = Color3.fromRGB(18, 22, 28),
+	InputStroke = Color3.fromRGB(35, 40, 50), 
+	PlaceholderColor = Color3.fromRGB(140, 140, 150)
+		},
+
+				
 		Serenity = {
 			TextColor = Color3.fromRGB(50, 55, 60),
 			Background = Color3.fromRGB(240, 245, 250),
